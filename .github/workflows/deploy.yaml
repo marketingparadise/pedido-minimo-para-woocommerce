@@ -23,13 +23,6 @@ jobs:
       - name: WordPress Plugin Deploy
         id: deploy
         uses: 10up/action-wordpress-plugin-deploy@stable
-        with:
-          # El "slug" de tu plugin en el repositorio de WP.org
-          plugin_slug: "pedido-minimo-for-woocommerce"
-          
-          # Nombre del fichero readme.txt (generalmente es este)
-          plugin_readme: "readme.txt"
-
         # Mapeo de los "Secrets" a variables de entorno que la acción espera
         env:
           WP_ORG_USERNAME: ${{ secrets.WP_ORG_USERNAME }}
