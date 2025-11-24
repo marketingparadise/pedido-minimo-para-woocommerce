@@ -1,32 +1,17 @@
-# Nombre del Workflow
-name: Deploy to WordPress.org Plugin Repository
-
-# Disparador (Trigger)
-# Esto se ejecutará CADA VEZ que publiques una "Release" en GitHub
+name: Deploy to WordPress.org
 on:
   release:
     types: [published]
-
-# Tareas (Jobs)
 jobs:
   deploy:
-    runs-on: ubuntu-latest # Usar la última imagen de Ubuntu
+    runs-on: ubuntu-latest
     steps:
-      # 1. Checkout del código de tu repositorio GitHub
-      - name: Checkout code
-        uses: actions/checkout@v4
-        with:
-          fetch-depth: 0 # Asegura que tengamos todo el historial para la acción
-
-      # 2. La acción principal: Despliegue en WordPress.org
-      # Esta es una acción mantenida por la comunidad (10up) muy fiable
-      - name: WordPress Plugin Deploy
-        id: deploy
-        uses: 10up/action-wordpress-plugin-deploy@stable
-        # Mapeo de los "Secrets" a variables de entorno que la acción espera
-        env:
-          WP_ORG_USERNAME: ${{ secrets.WP_ORG_USERNAME }}
-          WP_ORG_PASSWORD: ${{ secrets.WP_ORG_PASSWORD }}
-          # SVN_USERNAME y SVN_PASSWORD son alias que la acción también acepta
-          SVN_USERNAME: ${{ secrets.WP_ORG_USERNAME }}
-          SVN_PASSWORD: ${{ secrets.WP_ORG_PASSWORD }}
+    - name: Checkout
+      uses: actions/checkout@v4
+      with:
+        fetch-depth: 0
+    - name: WordPress Plugin Deploy
+      uses: 10up/action-wordpress-plugin-deploy@stable
+      env:
+        WP_ORG_USERNAME: ${{ secrets.WP_ORG_USERNAME }}
+        WP_ORG_PASSWORD: ${{ secrets.WP_ORG_PASSWORD }}
