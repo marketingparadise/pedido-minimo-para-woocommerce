@@ -15,3 +15,6 @@ jobs:
       env:
         WP_ORG_USERNAME: ${{ secrets.WP_ORG_USERNAME }}
         WP_ORG_PASSWORD: ${{ secrets.WP_ORG_PASSWORD }}
+        SVN_USERNAME: ${{ secrets.WP_ORG_USERNAME }}
+        SVN_PASSWORD: ${{ secrets.WP_ORG_PASSWORD }}
+        SLUG: pedido-minimo-for-woocommerce
