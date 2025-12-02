@@ -1,9 +1,9 @@
 #, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version: Mínimum order for WooCommerce\n"
+"Project-Id-Version: Minimum order for WooCommerce\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-10-07 15:28+0000\n"
+"POT-Creation-Date: 2025-12-02 16:24+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: \n"
@@ -20,7 +20,11 @@ msgstr ""
 msgid "Activation error"
 msgstr ""
 
-#: includes/class-pedido-minimo-admin.php:102
+#: includes/class-pedido-minimo-admin.php:75
+msgid "Amount"
+msgstr ""
+
+#: includes/class-pedido-minimo-admin.php:99
 msgid ""
 "Check this box if you want the minimum order amount to be verified after "
 "applying the coupon discount."
@@ -28,6 +32,10 @@ msgstr ""
 
 #. Author URI of the plugin
 msgid "https://mkparadise.com/"
+msgstr ""
+
+#: includes/class-pedido-minimo-admin.php:83
+msgid "Include discounts?"
 msgstr ""
 
 #. Author of the plugin
@@ -38,12 +46,17 @@ msgstr ""
 msgid "Minimum order"
 msgstr ""
 
+#. Name of the plugin
+msgid "Minimum order for WooCommerce"
+msgstr ""
+
 #: pedido-minimo-for-woocommerce.php:70
 msgid "Minimum order for WooCommerce:"
 msgstr ""
 
-#. Name of the plugin
-msgid "Mínimum order for WooCommerce"
+#. Section ID
+#: includes/class-pedido-minimo-admin.php:63
+msgid "Options"
 msgstr ""
 
 #. Description of the plugin
@@ -55,7 +68,7 @@ msgid "Set minimum order"
 msgstr ""
 
 #. part of the error message ID id="setting-error-no-float"
-#: includes/class-pedido-minimo-admin.php:112
+#: includes/class-pedido-minimo-admin.php:108
 msgid "The amount is invalid"
 msgstr ""
 

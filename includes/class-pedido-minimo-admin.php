@@ -24,8 +24,8 @@ class PedidoMinimo_Admin {
     public function menu_pedido_minimo() {
         add_submenu_page(
             'woocommerce',
-            __( 'Minimum order', 'pedido-minimo-for-woocommerce' ),
-            __( 'Set minimum order', 'pedido-minimo-for-woocommerce' ),
+            esc_html__( 'Minimum order', 'pedido-minimo-for-woocommerce' ),
+            esc_html__( 'Set minimum order', 'pedido-minimo-for-woocommerce' ),
             'manage_woocommerce',
             'mkp-opciones-pedidominimo',
             array ($this, 'opciones_pedidominimo_callback'),
@@ -60,7 +60,7 @@ class PedidoMinimo_Admin {
         // 1 - We create the section
         add_settings_section(
 	        'pedidominimo_pedidominimo_seccion', // Section ID
-	        'Opciones', // title (optional)
+	        esc_html__( 'Options', 'pedido-minimo-for-woocommerce' ), // title (optional)
 	        '', // callback to paint the section (optional)
 	        $page_slug
 	    );
@@ -72,7 +72,7 @@ class PedidoMinimo_Admin {
         // 3 - We add the fields
         add_settings_field(
             'pedidominimo_precio_minimo',
-            'Amount',
+            esc_html__( 'Amount', 'pedido-minimo-for-woocommerce' ),
             array ($this, 'pinta_precio_minimo'), // function that paints the field
             $page_slug,
             'pedidominimo_pedidominimo_seccion' // Section ID
@@ -80,7 +80,7 @@ class PedidoMinimo_Admin {
 
         add_settings_field(
             'pedidominimo_incluir_descuentos',
-            '¿Incluir descuentos?',
+            esc_html__( 'Include discounts?', 'pedido-minimo-for-woocommerce' ),
             array ($this, 'pinta_incluir_descuentos'), // function that paints the field
             $page_slug,
             'pedidominimo_pedidominimo_seccion' // Section ID
@@ -105,7 +105,7 @@ class PedidoMinimo_Admin {
             add_settings_error(
 		    'pedidominimo_settings_error',
 		    'no-float', // part of the error message ID id="setting-error-no-float"
-		    __('The amount is invalid', 'pedido-minimo-for-woocommerce'), // Error message
+		    esc_html__('The amount is invalid', 'pedido-minimo-for-woocommerce'), // Error message
 		    'error' // error type
 	    );
         $input = get_option('pedidominimo_precio_minimo', 0); // If there is an error, the previous value remains.
