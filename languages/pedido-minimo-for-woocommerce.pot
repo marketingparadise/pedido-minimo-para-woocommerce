@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Minimum order for WooCommerce\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-12-02 16:24+0000\n"
+"POT-Creation-Date: 2025-12-05 13:42+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: \n"
@@ -13,18 +13,22 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "X-Generator: Loco https://localise.biz/\n"
-"X-Loco-Version: 2.8.0; wp-6.8.3; php-7.4.19\n"
+"X-Loco-Version: 2.8.0; wp-6.9; php-7.4.19\n"
 "X-Domain: pedido-minimo-for-woocommerce"
 
 #: pedido-minimo-for-woocommerce.php:30
 msgid "Activation error"
 msgstr ""
 
-#: includes/class-pedido-minimo-admin.php:75
+#: includes/class-pedido-minimo-admin.php:92
+msgid "Alert message"
+msgstr ""
+
+#: includes/class-pedido-minimo-admin.php:76
 msgid "Amount"
 msgstr ""
 
-#: includes/class-pedido-minimo-admin.php:99
+#: includes/class-pedido-minimo-admin.php:108
 msgid ""
 "Check this box if you want the minimum order amount to be verified after "
 "applying the coupon discount."
@@ -34,7 +38,7 @@ msgstr ""
 msgid "https://mkparadise.com/"
 msgstr ""
 
-#: includes/class-pedido-minimo-admin.php:83
+#: includes/class-pedido-minimo-admin.php:84
 msgid "Include discounts?"
 msgstr ""
 
@@ -68,7 +72,7 @@ msgid "Set minimum order"
 msgstr ""
 
 #. part of the error message ID id="setting-error-no-float"
-#: includes/class-pedido-minimo-admin.php:108
+#: includes/class-pedido-minimo-admin.php:137
 msgid "The amount is invalid"
 msgstr ""
 
@@ -77,16 +81,21 @@ msgid ""
 "This plugin requires WooCommerce to be installed and active in order to work."
 msgstr ""
 
+#. {minimum}: minimum price value that the cart subtotal must reach, {total}: the current cart subtotal.
+#: includes/class-pedido-minimo-admin.php:127
+msgid ""
+"Use {minimum} for the minimum amount and {total} for the current cart total."
+msgstr ""
+
 #: pedido-minimo-for-woocommerce.php:29
 msgid ""
 "We are sorry, but the \"minimum order\" plugin requires WooCommerce to be "
 "installed and active. Please activate WooCommerce and try again."
 msgstr ""
 
-#. 1: minimum price value that the cart subtotal must reach, 2: the current cart subtotal.
-#: includes/class-pedido-minimo-public.php:37
-#, php-format
+#. {minimum}: minimum price value that the cart subtotal must reach, {total}: the current cart subtotal.
+#: includes/class-pedido-minimo-admin.php:116
 msgid ""
-"You must place a <strong>minimum order of %1$s</strong> to complete your "
-"purchase. Your cart total is currently %2$s."
+"You must place a <strong>minimum order of {minimum}</strong> to complete "
+"your purchase. Your cart total is currently {total}."
 msgstr ""

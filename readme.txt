@@ -2,8 +2,8 @@
 Contributors: marketingparadise
 Tags: woocommerce, minimum order, cart, checkout, e-commerce
 Requires at least: 5.8
-Tested up to: 6.8
-Stable tag: 1.0.4
+Tested up to: 6.9
+Stable tag: 1.0.5
 Requires PHP: 7.4
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
@@ -18,7 +18,7 @@ This plugin allows you to set a minimum value that the cart subtotal must reach 
 
 **Main Features:**
 
-* **Simple Configuration:** Adds a single option in the WooCommerce settings to define the minimum amount.
+* **Simple Configuration:** Adds three single options to define the minimum amount.
 * **Clear Notices:** Messages on the cart and checkout pages to inform the user when they have not reached the minimum.
 * **Full Compatibility:** Native integration with WooCommerce and compatible with most themes.
 * **Optimal Performance:** Clean, lightweight code that aligns with WordPress development best practices.
@@ -35,7 +35,7 @@ This plugin allows you to set a minimum value that the cart subtotal must reach 
 **Manual Installation:**
 
 1.  Download the plugin's `.zip` file from the WordPress.org repository.
-2.  Unzip the file. You will upload the `minimum-order-para-woocommerce` folder to the `/wp-content/plugins/` directory of your WordPress installation.
+2.  Unzip the file. You will upload the `pedido-minimo-for-woocommerce` folder to the `/wp-content/plugins/` directory of your WordPress installation.
 3.  Activate the plugin from the `Plugins` menu in your dashboard.
 4.  Configure the amount in `WooCommerce > Minimum Order`.
 
@@ -47,7 +47,7 @@ No, the plugin validates the amount against the **cart subtotal**. You have the 
 
 = Can I customize the message shown to the user? =
 
-Currently, the plugin displays a default message on the cart. We plan to offer more customization options in future versions.
+Yes, the plugin has a field to customize the message.
 
 = Is it compatible with my theme? =
 
@@ -64,6 +64,9 @@ No. The plugin is extremely lightweight, and its code only runs on the cart and 
 3.  Notice on the checkout page if the minimum is not met.
 
 == Changelog ==
+
+= 1.0.5 - 2025-12-05 =
+* New: Added option to customize the message shown to the user.
 
 = 1.0.4 - 2025-10-07 =
 * New: Added option to take coupon discounts into account.
