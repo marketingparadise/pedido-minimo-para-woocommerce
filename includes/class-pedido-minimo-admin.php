@@ -68,6 +68,7 @@ class PedidoMinimo_Admin {
         // 2 - We register the fields
         register_setting($option_group, 'pedidominimo_precio_minimo', array ($this, 'validar_precio'));
         register_setting($option_group, 'pedidominimo_incluir_descuentos', array($this, 'validar_checkbox'));
+        register_setting($option_group, 'pedidominimo_mensaje_pedido_minimo', array($this, 'validar_textarea'));
 
         // 3 - We add the fields
         add_settings_field(
@@ -85,6 +86,14 @@ class PedidoMinimo_Admin {
             $page_slug,
             'pedidominimo_pedidominimo_seccion' // Section ID
         );
+
+        add_settings_field(
+        'pedidominimo_mensaje_pedido_minimo',
+        esc_html__( 'Alert message', 'pedido-minimo-for-woocommerce'),
+        array ($this, 'pinta_mensaje_pedido_minimo'), // function that paints the field
+        $page_slug, // Slug de la página de ajustes
+        'pedidominimo_pedidominimo_seccion' // Section ID
+        );
     }
 
     // 4 - We paint the fields
@@ -99,7 +108,27 @@ class PedidoMinimo_Admin {
         echo '<label for="mkp-incluir-descuentos" class="mkp-description">' . esc_html(__('Check this box if you want the minimum order amount to be verified after applying the coupon discount.', 'pedido-minimo-for-woocommerce')) . '</label>';
     }
 
-    // Field validation
+    public function pinta_mensaje_pedido_minimo () {
+        $mensaje_actual = get_option('pedidominimo_mensaje_pedido_minimo');
+
+        // Default message
+        /* translators: {minimum}: minimum price value that the cart subtotal must reach, {total}: the current cart subtotal. */
+        $mensaje_defecto = __('You must place a <strong>minimum order of {minimum}</strong> to complete your purchase. Your cart total is currently {total}.', 'pedido-minimo-for-woocommerce');
+    
+        if (empty($mensaje_actual)) {
+            $mensaje_actual = $mensaje_defecto;
+        }
+
+        echo '<textarea id="mkp_mensaje_pedido_minimo_id" 
+                          name="pedidominimo_mensaje_pedido_minimo" 
+                          rows="4" 
+                          cols="80">' . esc_textarea($mensaje_actual) . '</textarea>';
+        /* translators: {minimum}: minimum price value that the cart subtotal must reach, {total}: the current cart subtotal. */
+        echo '<p class="description">' . __('Use {minimum} for the minimum amount and {total} for the current cart total.', 'pedido-minimo-for-woocommerce') . '</p>';
+
+    }
+
+    // Fields validation
     public function validar_precio ($input) {
         if (!is_numeric($input) || $input < 0) { // The minimum order must be a number greater than zero.
             add_settings_error(
@@ -117,5 +146,25 @@ class PedidoMinimo_Admin {
 
     public function validar_checkbox($input) {
         return isset($input) && $input == '1' ? '1' : '0';
+    }
+
+    public function validar_textarea ($input) {
+
+        // html tags allowed
+        $allowed_html = [
+            'strong' => [],
+            'em'     => [],
+            'b'      => [],
+            'i'      => [],
+            'span'   => [
+                'class' => [],
+                'style' => [],
+            ],
+        ];
+
+        $sanitized_input = wp_kses( $input, $allowed_html );
+
+        return $sanitized_input;
+
     }
 }
