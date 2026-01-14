@@ -1,0 +1,45 @@
+{
+  "$schema": "https://playground.wordpress.net/blueprint-schema.json",
+  "landingPage": "/wp-admin/admin.php?page=mkp-opciones-pedidominimo",
+  "preferredVersions": {
+    "php": "8.2",
+    "wp": "latest"
+  },
+  "login": true,
+  "plugins": ["woocommerce"],
+  "steps": [
+    {
+      "step": "installPlugin",
+      "pluginData": {
+        "resource": "wordpress.org/plugins",
+        "slug": "woocommerce"
+      },
+      "options": {
+        "activate": true
+      }
+    },
+    {
+      "step": "installPlugin",
+      "pluginData": {
+        "resource": "wordpress.org/plugins",
+        "slug": "pedido-minimo-for-woocommerce"
+      },
+      "options": {
+        "activate": true
+      }
+    },
+    {
+      "step": "mkdir",
+      "path": "/wordpress/wp-content/mu-plugins"
+    },
+    {
+      "step": "writeFile",
+      "path": "/wordpress/wp-content/mu-plugins/mkp-force-bypass.php",
+      "data": "<?php add_filter('woocommerce_admin_disabled', '__return_true'); add_action('admin_init', function() { if (isset($_GET['page']) && $_GET['page'] === 'wc-admin') { wp_safe_redirect(admin_url('admin.php?page=mkp-opciones-pedidominimo')); exit; } });"
+    },
+    {
+      "step": "runPHP",
+      "code": "<?php define('WP_ADMIN', true); require_once '/wordpress/wp-load.php'; update_option('woocommerce_setup_wizard_has_run', '1'); update_option('woocommerce_onboarding_skipped', 'yes'); $mkp_id = wp_insert_post(array('post_title'=>'Test product','post_status'=>'publish','post_type'=>'product')); update_post_meta($mkp_id,'_price','10'); update_post_meta($mkp_id,'_regular_price','10'); ?>"
+    }
+  ]
+}
