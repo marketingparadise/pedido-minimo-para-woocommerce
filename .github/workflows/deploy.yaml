@@ -18,3 +18,4 @@ jobs:
         SVN_USERNAME: ${{ secrets.WP_ORG_USERNAME }}
         SVN_PASSWORD: ${{ secrets.WP_ORG_PASSWORD }}
         SLUG: pedido-minimo-for-woocommerce
+        ASSETS_DIR: .wordpress-org
