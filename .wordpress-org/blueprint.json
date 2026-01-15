@@ -7,6 +7,11 @@
   },
   "login": true,
   "plugins": ["woocommerce"],
+    "siteOptions": {
+    "blogname": "Demo Minimum Order",
+    "admin_email": "demo@example.com",
+    "permalink_structure": "/%postname%/"
+  },
   "steps": [
     {
       "step": "installPlugin",
@@ -28,6 +33,16 @@
         "activate": true
       }
     },
+    {
+      "step": "installTheme",
+      "themeZipFile": {
+      "resource": "wordpress.org/themes", 
+      "slug": "storefront"
+    },
+  "options": {
+    "activate": true
+  }
+},
     {
       "step": "mkdir",
       "path": "/wordpress/wp-content/mu-plugins"
