@@ -36,8 +36,8 @@ class PedidoMinimo_Public {
         if ( $subtotal_a_validar < $minimum ) {
     
             $mensaje = str_replace(
-                array( '{minimum}', '{total}' ),    // Placeholders
-                array( wc_price( $minimum ), wc_price( WC()->cart->subtotal )),
+                array( '{minimum}', '{total}' ), // Placeholders
+                array( wc_price( $minimum ), wc_price( $subtotal_a_validar ) ),
                 $mensaje
             );
             
