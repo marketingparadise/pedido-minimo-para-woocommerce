@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Minimum order for WooCommerce\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-12-05 13:42+0000\n"
+"POT-Creation-Date: 2026-03-10 10:23+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: \n"
@@ -13,22 +13,22 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "X-Generator: Loco https://localise.biz/\n"
-"X-Loco-Version: 2.8.0; wp-6.9; php-7.4.19\n"
+"X-Loco-Version: 2.8.2; wp-6.9.1; php-8.1.10\n"
 "X-Domain: pedido-minimo-for-woocommerce"
 
 #: pedido-minimo-for-woocommerce.php:30
 msgid "Activation error"
 msgstr ""
 
-#: includes/class-pedido-minimo-admin.php:92
+#: includes/class-pedido-minimo-admin.php:93
 msgid "Alert message"
 msgstr ""
 
-#: includes/class-pedido-minimo-admin.php:76
+#: includes/class-pedido-minimo-admin.php:77
 msgid "Amount"
 msgstr ""
 
-#: includes/class-pedido-minimo-admin.php:108
+#: includes/class-pedido-minimo-admin.php:109
 msgid ""
 "Check this box if you want the minimum order amount to be verified after "
 "applying the coupon discount."
@@ -38,7 +38,7 @@ msgstr ""
 msgid "https://mkparadise.com/"
 msgstr ""
 
-#: includes/class-pedido-minimo-admin.php:84
+#: includes/class-pedido-minimo-admin.php:85
 msgid "Include discounts?"
 msgstr ""
 
@@ -46,7 +46,7 @@ msgstr ""
 msgid "Marketing Paradise"
 msgstr ""
 
-#: includes/class-pedido-minimo-admin.php:27
+#: includes/class-pedido-minimo-admin.php:28
 msgid "Minimum order"
 msgstr ""
 
@@ -59,7 +59,7 @@ msgid "Minimum order for WooCommerce:"
 msgstr ""
 
 #. Section ID
-#: includes/class-pedido-minimo-admin.php:63
+#: includes/class-pedido-minimo-admin.php:64
 msgid "Options"
 msgstr ""
 
@@ -67,12 +67,16 @@ msgstr ""
 msgid "Set a minimum order amount in your WooCommerce shop."
 msgstr ""
 
-#: includes/class-pedido-minimo-admin.php:28
+#: includes/class-pedido-minimo-admin.php:29
 msgid "Set minimum order"
 msgstr ""
 
+#: includes/class-pedido-minimo-admin.php:177
+msgid "Settings"
+msgstr ""
+
 #. part of the error message ID id="setting-error-no-float"
-#: includes/class-pedido-minimo-admin.php:137
+#: includes/class-pedido-minimo-admin.php:138
 msgid "The amount is invalid"
 msgstr ""
 
@@ -82,7 +86,7 @@ msgid ""
 msgstr ""
 
 #. {minimum}: minimum price value that the cart subtotal must reach, {total}: the current cart subtotal.
-#: includes/class-pedido-minimo-admin.php:127
+#: includes/class-pedido-minimo-admin.php:128
 msgid ""
 "Use {minimum} for the minimum amount and {total} for the current cart total."
 msgstr ""
@@ -94,7 +98,7 @@ msgid ""
 msgstr ""
 
 #. {minimum}: minimum price value that the cart subtotal must reach, {total}: the current cart subtotal.
-#: includes/class-pedido-minimo-admin.php:116
+#: includes/class-pedido-minimo-admin.php:117
 msgid ""
 "You must place a <strong>minimum order of {minimum}</strong> to complete "
 "your purchase. Your cart total is currently {total}."
