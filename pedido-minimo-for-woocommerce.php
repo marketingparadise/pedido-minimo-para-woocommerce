@@ -2,7 +2,7 @@
 /*
  * Plugin Name: Minimum order for WooCommerce
  * Description: Set a minimum order amount in your WooCommerce shop.
- * Version: 1.0.7.1
+ * Version: 1.0.8
  * Requires Plugins: woocommerce
  * Author: Marketing Paradise
  * Author URI: https://mkparadise.com/
@@ -38,7 +38,7 @@ final class PedidoMinimo_Principal {
 
     public function __construct() {
         $this->cargar_dependencias();
-        new PedidoMinimo_Admin();
+        new PedidoMinimo_Admin( plugin_basename( __FILE__ ) );
         new PedidoMinimo_Public();
     }
 

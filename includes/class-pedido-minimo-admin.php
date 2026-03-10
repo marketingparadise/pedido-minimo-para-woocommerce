@@ -13,9 +13,10 @@ if (!defined('ABSPATH')) {
 
 class PedidoMinimo_Admin {
 
-    public function __construct() {
+    public function __construct( $plugin_basename ) {
         add_action('admin_menu', array($this, 'menu_pedido_minimo')); // Add page to WooCommerce submenu
-        add_action('admin_init', array ($this, 'crear_settings')); // We create settings sections, register settings, and create fields.
+        add_action('admin_init', array ($this, 'crear_settings')); // Create settings sections, register settings, and create fields.
+        add_filter( "plugin_action_links_" . $plugin_basename, array ($this, 'add_plugin_action_link') ); // Add action links in plugin
     }
 
     /**
@@ -50,7 +51,7 @@ class PedidoMinimo_Admin {
     }
 
     /**
-     * We create settings sections, register settings, and create fields.
+     * Create settings sections, register settings, and create fields.
      */
     public function crear_settings() {
 
@@ -165,6 +166,18 @@ class PedidoMinimo_Admin {
         $sanitized_input = wp_kses( $input, $allowed_html );
 
         return $sanitized_input;
+
+    }
+
+    /**
+    * Add action links in plugin
+    */
+    public function add_plugin_action_link( $links ) {
+
+    $settings_link = '<a href="' . admin_url( 'admin.php?page=mkp-opciones-pedidominimo' ) . '">' . __( 'Settings', 'pedido-minimo-for-woocommerce' ) . '</a>'; // Setting page link
+    array_unshift( $links, $settings_link );
+    
+    return $links;
 
     }
 }

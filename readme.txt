@@ -3,7 +3,7 @@ Contributors: marketingparadise
 Tags: woocommerce, minimum order, cart, checkout, e-commerce
 Requires at least: 5.8
 Tested up to: 6.9
-Stable tag: 1.0.7.1
+Stable tag: 1.0.8
 Requires PHP: 7.4
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
@@ -64,6 +64,10 @@ No. The plugin is extremely lightweight, and its code only runs on the cart and 
 3.  Notice on the checkout page if the minimum is not met.
 
 == Changelog ==
+
+= 1.0.8 - 2026-03-10 =
+* New: Added a link to settings in plugin action links.
+* Confirm WooCommerce 10.5.3 compatibility.
 
 = 1.0.7 - 2026-02-11 =
 * Fix: Corrected a problem where the total cart amount was not displayed correctly in the message when there was a discount.
